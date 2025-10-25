@@ -1,0 +1,16 @@
+    /**
+     * Get the Slack representation of the notification
+     *
+     * @param \Cake\Datasource\EntityInterface|\Cake\Notification\AnonymousNotifiable $notifiable The entity receiving the notification
+     * @return \Cake\Notification\Slack\BlockKit\BlockKitMessage
+     */
+    public function toSlack(EntityInterface|AnonymousNotifiable $notifiable): BlockKitMessage
+    {
+        return (new BlockKitMessage())
+            ->text('{{ notificationName }}')
+            ->headerBlock('{{ notificationName }}')
+            ->sectionBlock(function (SectionBlock $section) {
+                $section->text('You have a new notification')
+                    ->markdown();
+            });
+    }
