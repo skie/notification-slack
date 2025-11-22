@@ -13,7 +13,7 @@ use Cake\SlackNotification\Provider\SlackChannelProvider;
  *
  * Registers the Slack notification channel with the CakePHP Notification plugin.
  */
-class Plugin extends BasePlugin
+class SlackNotificationPlugin extends BasePlugin
 {
     /**
      * Bootstrap hook
